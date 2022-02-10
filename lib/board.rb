@@ -15,11 +15,13 @@ attr_reader :board_array
   end
 
   def print_board
-    test_array.each do |row|
+    @board_array.each do |row|
       row.each do |col|
         print col
       end
       puts
     end
   end
+
+
 end
