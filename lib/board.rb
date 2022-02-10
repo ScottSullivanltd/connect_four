@@ -22,6 +22,3 @@ attr_reader :board_array
       puts
     end
   end
-
-
-end
