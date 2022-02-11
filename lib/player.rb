@@ -10,8 +10,8 @@ class Player
     @c_pieces = 21
   end
 
-  def place_piece #gets the user input and returns the input as a cap letter
-    input = ""
+  def player_column_choice #gets the user input and returns the input as a cap letter
+    input = ""            #outer if loop to check if player is the computer or not needed here
     until input == "A" || "B" || "C" || "D" || "E" || "F" || "G" do
       puts "Which column would you like to drop a piece into?"
       puts "Please input the letter at the top of the column you want to pick."
