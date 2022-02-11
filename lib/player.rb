@@ -6,16 +6,15 @@ class Player
   def initialize(name = "Computer Overlord")
     @name = name
     @pieces = 21
+    @array = ["A", "B", "C", "D", "E", "F", "G"]
   end
 
-  def player_column_choice #gets the user input and returns the input as a cap letter
-    if :name == "Computer Overlord"
-      
-
-
-
+  def player_column_choice #gets the user/computer input and returns the input as a cap letter 
+    if @name == "Computer Overlord"
+      c_input = @array.sample
+      return c_input #this works!
     else
-      input = ""            #outer if loop to check if player is the computer or not needed here
+      input = ""
       while input == "" || input == "A" || input == "B" || input == "C" || input == "D" || input == "E" || input == "F" || input == "G" do
         puts "Which column would you like to drop a piece into?"
         puts "Please input the letter at the top of the column you want to pick."
