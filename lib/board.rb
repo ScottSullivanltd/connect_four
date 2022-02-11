@@ -15,31 +15,11 @@ attr_reader :board_array
   end
 
   def print_board
-    @board_array.each do |row|
+    # @board_array.each do |row|
       row.each do |col|
         print col
       end
       puts
     end
   end
-
-  
-#   attr_reader :new_board
-#   def initialize
-#     @new_board = new_board
-#   end
-
-#   new_board = [
-#     [" A", "B", "C", "D", "E", "F", "G"],
-#     [" .",".",".",".",".",".","."],
-#     [" .",".",".",".",".",".","."],
-#     [" .",".",".",".",".",".","."],
-#     [" .",".",".",".",".",".","."],
-#     [" .",".",".",".",".",".","."],
-#     [" .",".",".",".",".",".","."]
-#   ]
-
-#   new_board.each do |row|
-#     puts row.join(' ')
-#   end
-# end
+end
