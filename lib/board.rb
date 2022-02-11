@@ -1,20 +1,21 @@
 class Board
-  attr_reader :new_board
+  attr_reader :print_board
   def initialize
-    @new_board = new_board
+    @print_board = print_board
   end
 
-  new_board = [
-    [" A", "B", "C", "D", "E", "F", "G"],
-    [" .",".",".",".",".",".","."],
-    [" .",".",".",".",".",".","."],
-    [" .",".",".",".",".",".","."],
-    [" .",".",".",".",".",".","."],
-    [" .",".",".",".",".",".","."],
-    [" .",".",".",".",".",".","."]
-  ]
-
-  new_board.each do |row|
-    puts row.join(' ')
+  def game_board
+    @print_board = [
+      [" A", "B", "C", "D", "E", "F", "G"],
+      [" .",".",".",".",".",".","."],
+      [" .",".",".",".",".",".","."],
+      [" .",".",".",".",".",".","."],
+      [" .",".",".",".",".",".","."],
+      [" .",".",".",".",".",".","."],
+      [" .",".",".",".",".",".","."]
+    ]
+      print_board.each do |row|
+        puts row.join(' ')
+      end
   end
 end
