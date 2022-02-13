@@ -1,13 +1,17 @@
 require 'pry'
 require './lib/board'
+require './lib/player'
+require '.lib/turn'
 
 board = Board.new
 
 puts "What is your name?"
 
 name = gets.chomp
+player1 = Player.new(name)
+player2 = Player.new
 
-puts "Hello #{name}!"
+puts "Hello #{name}! Your opponent is #{player2.name}"
 puts "Welcome to Cory's and Scott's Connect 4 - Virtual Edition!"
 puts "The rules are simple."
 puts "Connect 4 of your 'X' pieces in a row before the computer does with their 'O' pieces."
@@ -22,7 +26,9 @@ puts "Ready to play the game #{name}? Press 'S' to start or 'Q' to quit."
 start_input = gets.chomp.capitalize
 
 if start_input == 'S'
+  #need a loop here to run the game again and until a certain variable == something
   board.print_board
+  player1.player_column_choice
 
 elsif start_input == 'Q'
   puts "We are sorry to see you go :("
