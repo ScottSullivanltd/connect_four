@@ -1,8 +1,8 @@
 require 'pry'
 
 class Player
-  attr_reader :name, :pieces
-
+  attr_reader :name
+  attr_accessor :pieces
   def initialize(name = "Computer Overlord")
     @name = name
     @pieces = 21
