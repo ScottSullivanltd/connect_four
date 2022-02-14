@@ -26,21 +26,18 @@ puts "Ready to play the game #{name}? Press 'S' to start or 'Q' to quit."
 start_input = gets.chomp.capitalize
 
 if start_input == 'S'
-  #need a loop here to run the game again and until a certain variable == something
+  
   while player1.pieces > 0 && player2.pieces > 0 #breaks out for a draw condition
     board.print_board
-    p1turn = Turn.new(player1.player_column_choice, board, player1.name)
+    p1turn = Turn.new(player1.player_column_choice, board, player1.name, player1)
     p1turn.drop_piece
-    player1.pieces -= 1
 
-    p2turn = Turn.new(player2.player_column_choice, board, player2.name)
+
+    p2turn = Turn.new(player2.player_column_choice, board, player2.name, player2)
     p2turn.drop_piece
-    player2.pieces -= 1
 
-    # binding.pry
-    
   end
-  # player1.player_column_choice
+  board.print_board
 
 
 
