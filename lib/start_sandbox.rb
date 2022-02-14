@@ -3,9 +3,10 @@ require './lib/board'
 require './lib/player_sandbox'
 
 class Start
-  attr_reader :name
+  attr_reader :name, :board
   def initialize
     @name = name
+    @board = Board.new  #to create a board object if a game is initiated
   end
 
   def get_name
@@ -29,8 +30,8 @@ class Start
     start_input = gets.chomp.capitalize
 
     if start_input == 'S'
-      board = Board.new  #to create a board object if a game is initiated
-      board.print_board
+      # board = Board.new  #to create a board object if a game is initiated
+      @board.print_board
     elsif start_input == 'Q'
       puts "#{name}, we are sorry to see you go :("
       puts "Please reload the game when you want to play again."
