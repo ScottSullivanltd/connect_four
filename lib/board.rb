@@ -23,7 +23,7 @@ attr_reader :board_array
     end
   end
 
-  
+
 #   attr_reader :new_board
 #   def initialize
 #     @new_board = new_board
