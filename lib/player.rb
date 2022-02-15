@@ -4,15 +4,16 @@ require './lib/board'
 require './lib/turn'
 
 class Player
-  attr_reader :name
+  attr_reader :name, :column_choice
 
   def initialize(name = "Computer Overlord")
     @name = name
+    @column_choice = ["A", "B", "C", "D", "E", "F", "G"]
   end
 
   def column_choice #gets the computer input and returns the input as a cap letter
     if @name == "Computer Overlord"
-      @column_choice =["A", "B", "C", "D", "E", "F", "G"].sample
+      @column_choice.sample
     else
       input = ""
       while input == "" do

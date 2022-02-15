@@ -11,7 +11,7 @@ name = gets.chomp.capitalize
 player = Player.new(name)
 computer = Player.new
 
-board = Board.new(player, computer)
+board = Board.new
 
 puts ""
 puts "Hello #{name}!"
