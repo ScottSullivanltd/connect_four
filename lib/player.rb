@@ -34,5 +34,4 @@ class Player
   def is_winner? #returns false unless methods for vertical, horizontal, diagonal return true.
     #separate the methods for each test.
   end
-
 end
