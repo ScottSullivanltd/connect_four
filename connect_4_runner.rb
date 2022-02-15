@@ -1,9 +1,8 @@
 require 'rspec'
 require 'pry'
 require './lib/board'
-require './lib/player_sandbox'
-require './lib/turn_sandbox'
-# require './lib/start_sandbox'
+require './lib/player'
+require './lib/turn'
 
 puts ""
 puts "What is your name?"

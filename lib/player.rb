@@ -1,8 +1,7 @@
 require 'rspec'
 require 'pry'
 require './lib/board'
-require './lib/turn_sandbox'
-require './lib/start_sandbox'
+require './lib/turn'
 
 class Player
   attr_reader :name
@@ -31,7 +30,8 @@ class Player
     end
   end
 
-  def is_winner?
+  def is_winner? #returns false unless methods for vertical, horizontal, diagonal return true.
+    #separate the methods for each test.
   end
 
 end

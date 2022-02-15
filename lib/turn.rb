@@ -1,4 +1,4 @@
-require './lib/player_sandbox'
+require './lib/player'
 require './lib/board'
 require 'pry'
 

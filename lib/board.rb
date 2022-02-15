@@ -1,6 +1,6 @@
 require 'pry'
-require './lib/player_sandbox'
-require './lib/turn_sandbox'
+require './lib/player'
+require './lib/turn'
 
 class Board
   attr_reader :board_array, :board_columns, :player, :computer
