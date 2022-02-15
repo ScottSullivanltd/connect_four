@@ -44,19 +44,17 @@ if start_input == 'S'
     computer_turn = Turn.new(computer.column_choice, board, computer.name, computer)
     computer_turn.drop_piece
     piece_count -= 1
-
     # if player.is_winner? || computer.is_winner?
-    #   break
     # end
   end
-
-  if player.is_winner?
-    puts "You Won!  Winner winner pizza dinner!"
-  elsif computer.is_winner?
-    puts "You Lost!  Computer Overlord dominates!"
-  else
-    puts "The game is a Draw"
-  end
+  puts "The game is a Draw"
+  # if player.is_winner?
+  #   puts "Winner winner pizza dinner!"
+  # elsif computer.is_winner?
+  #   puts "Computer Overlord dominates!"
+  # else
+    # puts "The game is a Draw"
+  # end
 
 elsif start_input == 'Q'
   puts "#{name}, we are sorry to see you go :("
