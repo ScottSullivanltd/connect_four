@@ -12,6 +12,7 @@ player = Player.new(name)
 computer = Player.new
 
 board = Board.new
+# binding.pry
 
 puts ""
 puts "Hello #{name}!"
@@ -39,23 +40,21 @@ if start_input == 'S'
     board.print_board
     sleep 1
     puts "Computer Overlord is thinking"
-    sleep 2
+    sleep 1
     computer_turn = Turn.new(computer.column_choice, board, computer.name, computer)
     computer_turn.drop_piece
     piece_count -= 1
-
-    if player.is_winner? || computer.is_winner?
-      break
-    end
+    # if player.is_winner? || computer.is_winner?
+    # end
   end
-
-  if player.is_winner?
-    puts "You Won!  Winner winner pizza dinner!"
-  elsif computer.is_winner?
-    puts "You Lost!  Computer Overlord dominates!"
-  else
-    puts "The game is a Draw"
-  end
+  puts "The game is a Draw"
+  # if player.is_winner?
+  #   puts "Winner winner pizza dinner!"
+  # elsif computer.is_winner?
+  #   puts "Computer Overlord dominates!"
+  # else
+    # puts "The game is a Draw"
+  # end
 
 elsif start_input == 'Q'
   puts "#{name}, we are sorry to see you go :("

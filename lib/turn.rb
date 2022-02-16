@@ -37,8 +37,9 @@ class Turn
       c = 6 #controls the array row selection
 
       while @board.board_array[1][convert].include?(".") != true
-        puts "This column is full, please select another column."
-        board.print_board
+        if @name != "Computer Overlord"
+          puts "This column is full, please select another column."
+        end
         @input = @player.column_choice
       end
 

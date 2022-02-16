@@ -4,14 +4,17 @@ require './lib/board'
 require './lib/turn'
 
 class Player
-  attr_reader :name, :column_choice
+  attr_reader :name, :column_choice, :board, :horizontal_method, :vertical_method, :board_array, :board_columns
 
   def initialize(name = "Computer Overlord")
     @name = name
     @column_choice = ["A", "B", "C", "D", "E", "F", "G"]
+    @board = board
+    @board_array = board_array
+    @board_columns = board_columns
   end
 
-  def column_choice #gets the computer input and returns the input as a cap letter
+  def column_choice
     if @name == "Computer Overlord"
       @column_choice.sample
     else
@@ -31,7 +34,8 @@ class Player
     end
   end
 
-  def is_winner? #returns false unless methods for vertical, horizontal, diagonal return true.
-    #separate the methods for each test.
-  end
+  # def is_winner?
+  #   return false unless @board.horizontal_method || @board.vertical_method || @board.diagonal_method
+  #   true
+  # end
 end
