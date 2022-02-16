@@ -33,9 +33,4 @@ class Player
       end
     end
   end
-
-  # def is_winner?
-  #   return false unless @board.horizontal_method || @board.vertical_method || @board.diagonal_method
-  #   true
-  # end
 end

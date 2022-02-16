@@ -14,7 +14,8 @@ class Board
     @board_array[4] = [" ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", "."]
     @board_array[5] = [" ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", "."]
     @board_array[6] = [" ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", ".", " ", "."]
-
+    @x = ["X", "X", "X", "X"]
+    @o = ["O", "O", "O", "O"]
     @board_columns = [
       [board_array[1][1], board_array[2][1], board_array[3][1], board_array[4][1], board_array[5][1], board_array[6][1]],
       [board_array[1][3], board_array[2][3], board_array[3][3], board_array[4][3], board_array[5][3], board_array[6][3]],
@@ -80,13 +81,12 @@ class Board
         end
       end
       if b == x
-        puts "You won with horizontal connect 4"
+        return x
       elsif b == o
-        puts "Computer Overlord wins with horizontal connect 4"
+        return o
       end
     end
   end
-# binding.pry
   def vertical_method
     x = ["X", "X", "X", "X"]
     o = ["O", "O", "O", "O"]
@@ -110,9 +110,9 @@ class Board
         end
       end
       if b == x
-        puts "You won with vertical connect 4"
+        return x
       elsif b == o
-        puts "Computer Overlord wins with vertical connect 4"
+        return o
       end
     end
   end
@@ -140,10 +140,18 @@ class Board
         end
       end
       if b == x
-        puts "You won with diagonal connect 4"
+        return x
       elsif b == o
-        puts "Computer Overlord wins with diagonal connect 4"
+        return o
       end
+    end
+  end
+
+  def is_winner?
+    if horizontal_method == @x || vertical_method == @x || diagonal_method == @x
+      return "X"
+    elsif horizontal_method == @o || vertical_method == @o || diagonal_method == @o
+      return "O"
     end
   end
 end
