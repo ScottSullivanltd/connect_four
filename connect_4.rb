@@ -4,12 +4,12 @@ require './lib/player'
 require './lib/turn'
 
 board = Board.new
+player1 = Player.new(name)
+player2 = Player.new
 
 puts "What is your name?"
 
 name = gets.chomp
-player1 = Player.new(name)
-player2 = Player.new
 
 puts "Hello #{name}! Your opponent is #{player2.name}."
 puts "Welcome to Cory's and Scott's Connect 4 - Virtual Edition!"
@@ -26,8 +26,9 @@ puts "Ready to play the game #{name}? Press 'S' to start or 'Q' to quit."
 start_input = gets.chomp.capitalize
 
 if start_input == 'S'
-  
+
   while player1.pieces > 0 && player2.pieces > 0 #breaks out for a draw condition
+
     board.print_board
     p1turn = Turn.new(player1.player_column_choice, board, player1.name, player1)
     p1turn.drop_piece
@@ -38,7 +39,7 @@ if start_input == 'S'
 
   end
   board.print_board
-
+  puts "The game has ended in a draw!"
 
 
 elsif start_input == 'Q'

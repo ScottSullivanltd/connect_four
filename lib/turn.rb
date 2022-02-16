@@ -35,7 +35,7 @@ class Turn
     if z == 0
       c = 6 #controls the array row selection
 
-      while @board.board_array[1][convert].include?(".") != true
+      while @board.board_array[1][convert].include?(".") != true #checks if column is full
         if @name != "Computer Overlord"
           puts "This column is full. Please select another."
           @board.print_board
@@ -64,6 +64,11 @@ class Turn
     end
   end
 
+  def winner?
 
 
+
+
+
+  end
 end
