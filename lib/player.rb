@@ -4,13 +4,8 @@ require './lib/board'
 require './lib/turn'
 
 class Player
-<<<<<<< HEAD
-  attr_reader :name
-  attr_accessor :pieces
-=======
   attr_reader :name, :column_choice, :board, :horizontal_method, :vertical_method, :board_array, :board_columns
 
->>>>>>> 74100ae0388ec427b1e80fa181bdc46de2fe4726
   def initialize(name = "Computer Overlord")
     @name = name
     @column_choice = ["A", "B", "C", "D", "E", "F", "G"]

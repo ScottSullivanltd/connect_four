@@ -31,37 +31,41 @@ start_input = gets.chomp.capitalize
 
 if start_input == 'S'
   piece_count = 42
-  until piece_count == 0 || piece_count == "end"
+  until piece_count == 0
 
-    if board.is_winner? != "X" || board.is_winner? != "O" || piece_count != "end"
+    if board.is_winner? != "X" || board.is_winner? != "O" || piece_count != 0
       board.print_board
       player_turn = Turn.new(player.column_choice, board, player.name, player)
       player_turn.drop_piece
       piece_count -= 1
-    end
-    if board.is_winner? == "X"
-      puts "You Won!"
-      piece_count = "end"
+      if board.is_winner? == "X"
+        puts "You Won!"
+        board.print_board
+        break
+      end
+
     end
 
-    if board.is_winner? != "X" || board.is_winner? != "O" || piece_count != "end"
+    if board.is_winner? != "X" || board.is_winner? != "O" || piece_count != 0
       board.print_board
-      sleep 1
+      # sleep 1
       puts "Computer Overlord is thinking"
-      sleep 1
+      # sleep 1
       computer_turn = Turn.new(computer.column_choice, board, computer.name, computer)
       computer_turn.drop_piece
       piece_count -= 1
+      if board.is_winner? == "O"
+        puts "Computer Overlord Won!"
+        board.print_board
+        break
+      end
     end
 
-    if board.is_winner? == "O"
-      puts "Computer Overlord Won!"
-      piece_count = "end"
-    end
   end
-    if piece_count == 0
-      puts "The game is a Draw"
-    end
+
+  if piece_count == 0
+    puts "The game is a Draw"
+  end
 
 elsif start_input == 'Q'
   puts "#{name}, we are sorry to see you go :("
