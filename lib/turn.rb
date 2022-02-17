@@ -1,10 +1,9 @@
-require './lib/player'
-require './lib/board'
 require 'pry'
+require './lib/player'
 
 class Turn
-  attr_reader :input, :name, :player
-  attr_accessor :board
+  attr_reader  :name
+  attr_accessor :board, :player, :input
 
   def initialize(input, board, name, player_var)
     @input = input
@@ -36,11 +35,14 @@ class Turn
     if z == 0
       c = 6 #controls the array row selection
 
-      while @board.board_array[1][convert].include?(".") != true
+      while @board.board_array[1][convert].include?(".") != true #checks if column is full
         if @name != "Computer Overlord"
-          puts "This column is full, please select another column."
+          puts "This column is full. Please select another."
+          @board.print_board
+          @input = @player.column_choice
+        else
+          @input = @player.column_choice
         end
-        @input = @player.column_choice
       end
 
       while c > 0 && z == 0 do
